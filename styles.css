@@ -1,57 +1,81 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-    font-family: 'Lato', sans-serif; 
-    line-height: 1.5;
+html,
+body {
+  font-family: "Lato", sans-serif;
+  line-height: 1.5;
 }
 
 body {
-    background-color: #000080; 
-    font-size: 16px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  background-color: #000080;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-h1{
-    color: #fff;
-    width: 30rem;
-    text-align: center;
-    margin-bottom: 1.5rem;
+
+
+h1 {
+  color: #fff;
+  width: 30rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-form{
-    width: 30%;
-    background-color: darkgrey;
-    padding: 2rem;;
+form {
+  max-width: 500px;
+  width: 100%;
+  background-color: darkgrey;
+  padding: 2rem;
+  border: 2px solid #fff;
+  margin: 0 auto;
 }
 
-fieldset{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    border: none;
-    text-align: center;
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: none;
+  text-align: center;
 }
 
-label{
-    color: #fff;
-    font-weight: 700;
+#enter-number {
+  color: #fff;
+  font-weight: 700;
 }
 
-#number{
-    height: 2.4rem;
+#number {
+  height: 2.4rem;
 }
 
-#convert-btn{
-    height: 2rem;
-    background-color: orange;
-    font-weight: bold;
-    border: none;
+#convert-btn {
+  height: 2rem;
+  background-color: orange;
+  font-weight: bold;
+  border: none;
+}
+
+#output {
+  max-width: 500px;
+  width: 100%;
+  background-color: darkgrey;
+  padding: 1rem;
+  border: 2px solid #fff;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  form,
+  #output {
+    width: 100%;
+    max-width: 90%;
+  }
 }
