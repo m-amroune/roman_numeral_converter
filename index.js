@@ -20,14 +20,28 @@ const numbers =
   }
 ;
 
+const validateInput = (input) => {
+  if(input === ""){
+    return "Please enter a valid number"
+  } else if(input < 1){
+    return "Please enter a number greater than or equal to 1"
+  } else if(input >= 4000){
+    return "Please enter a number less than or equal to 3999"
+  }
+  return null;
+}
+
 const convertNumber = () => {
   convertBtn.addEventListener("click", (event) => {
     event.preventDefault();
 
-    if (userNumber.value === "") {
-      output.innerHTML = "Please enter a valid number";
+    const userInput = Number(userNumber.value);
+    const errorMessage = validateInput(userInput)
+
+    if(errorMessage){
+      output.innerHTML = errorMessage
     } else{
-        converter(Number(userNumber.value))
+      converter(userInput)
     }
   });
 };
@@ -35,7 +49,7 @@ convertNumber();
 
 const converter = (userNumber) => {
     let result = ""
-     const numbersTypes = Object.entries(numbers).sort((a,b) => b[1] - a[1]);
+    const numbersTypes = Object.entries(numbers).sort((a,b) => b[1] - a[1]);
 
     for(let [roman, arabic] of numbersTypes){
         while(userNumber >= arabic ){
